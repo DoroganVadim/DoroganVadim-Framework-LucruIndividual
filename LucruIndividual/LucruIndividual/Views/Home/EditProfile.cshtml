@@ -1,0 +1,94 @@
+﻿@model LucruIndividual.Models.Home.EditProfileModel
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<body class="bg-light">
+    <div class="container mt-5 w-50">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="content">
+                                <form action="Profile" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <button class="btn btn-primary float-end mt-3">Înapoi</button>
+                                </form>
+                                <form action="UpdateProfile" method="post" enctype="multipart/form-data">
+                                    @Html.AntiForgeryToken()
+                                    <h4>Modificare Profil</h4>
+                                    @if(Model.profileImage == null){
+                                        string path = "/images/" + Model.sex + ".jpg";
+                                        <div class='rounded-circle' style='overflow: visible; width: 200px; height: 200px;'>
+                                            <img id='imageProfile' src="@path" alt="Imagine profil" class='img-thumbnail'>
+                                        </div>
+                                    }
+                                    else {
+                                        string path = "/images/" + Model.profileImage.category + Convert.ToString(Model.profileImage.id) + Model.profileImage.extension;
+                                        <div class='rounded-circle' style='overflow: visible; width: 200px; height: 200px;'>
+                                            <img id='imageProfile' src="@path" alt="Imagine profil" class='img-thumbnail' style='overflow: visible; width: 200px; height: 200px;'>
+                                        </div>
+                                    }
+                                    <br><br>
+                                    <div class="mb-3">
+                                        <label class="form-label">Selectează o imagine:</label>
+                                        <input id="imagine" name="image" type="file" accept="image/*" onchange="loadFile(event)" class="form-control">
+                                    </div>
+                                    <span asp-validation-for="@Model.profileImage" class="text-danger"></span>
+                                    <br>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nume de familie<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" asp-for="@Model.surrname" autocomplete="off" placeholder="Nume de famile">
+                                        <span asp-validation-for="@Model.surrname" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Prenume<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" asp-for="@Model.name" autocomplete="off" placeholder="Prenume">
+                                        <span asp-validation-for="@Model.name" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nickname</label>
+                                        <input type="text" class="form-control" asp-for="@Model.nickname" autocomplete="off" placeholder="Nickname">
+                                        <span asp-validation-for="@Model.nickname" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Despre Mine</label>
+                                        <textarea asp-for="@Model.aboutUser" class="form-control" rows="5" placeholder="Despre Mine"></textarea>
+                                        <span asp-validation-for="@Model.aboutUser" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Data Nasterii<span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" asp-for="@Model.birthDay" autocomplete="off" placeholder="Data Nasterii">
+                                        <span asp-validation-for="@Model.birthDay" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label>Sexul:</label><br>
+                                        <input type="radio" asp-for="@Model.sex" value="M" /> Masculin<br>
+                                        <input type="radio" asp-for="@Model.sex" value="F" /> Feminin<br>
+                                        <span asp-validation-for="@Model.sex" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Telefon</label>
+                                        <input type="text" class="form-control" name="telefon" autocomplete="off" placeholder="Telefon" asp-for="@Model.phoneNumber">
+                                        <span asp-validation-for="@Model.phoneNumber" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="submit" class="btn btn-primary w-100" value="Modifica">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function loadFile(event) {
+        var output = document.getElementById('imageProfile');
+        output.style.display = 'block';
+        output.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>

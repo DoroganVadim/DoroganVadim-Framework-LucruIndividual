@@ -1,0 +1,142 @@
+﻿@model LucruIndividual.Models.Home.ProfileInformation
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="container mt-4">
+    <div class="row">
+
+        <div class="col-md-4">
+            <h2>
+                Profil
+                @if (Model.friendCheck == 2)
+                {
+                    @:(Prieten)
+                }
+            </h2>
+            
+            @if (Model.profile.profileImage == null)
+            {
+                string path = "/images/" + (Model.profile.sex == 0 ? "F" : "M") + ".jpg";
+                <div class="rounded-circle" style="width: 50px; height: 50px; overflow: hidden;">
+                    <img src="@path" alt="Imagine profil" class="img-fluid">
+                </div>
+            }
+            else
+            {
+                string path = "/images/" + Model.profile.profileImage.category + Convert.ToString(Model.profile.profileImage.id) + Model.profile.profileImage.extension;
+                <div class="rounded-circle" style="width: 50px; height: 50px; overflow: hidden;">
+                    <img src="@path" alt="Imagine profil" class="img-fluid">
+                </div>
+            }
+
+            <p><b>Date Persoana:</b></p>
+            <p>Nume Prenume: @Model.profile.surrname @Model.profile.name</p>
+            <p>Nickname: @(Model.profile.nickname == null ? "..." : @Model.profile.nickname)</p>
+            <p>Data naștere: @Model.profile.birthDay</p>
+            <p>Sex: @(Model.profile.sex == 1 ? "Masculin" : "Feminin")</p>
+            <p>Despre mine: @(Model.profile.aboutUser == null ? "..." : Model.profile.aboutUser)</p>
+            <br>
+            <p><b>Date de Contact:</b></p>
+            <p>Email: @Model.profile.user.email</p>
+            <p>Nr.Telefon: @(Model.profile.phoneNumber == null ? "..." : Model.profile.phoneNumber)</p>
+            
+            
+            
+            @if (Model.isTheUser)
+            {
+                <form asp-action="EditProfile" method="post">
+                    @Html.AntiForgeryToken()
+                    <button type="sumbmit" class="btn btn-primary w-50">Modificare</button>
+                </form>
+            }
+            else if (Model.friendCheck == 0)
+            {
+                <form asp-action="SendFriendRequest" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="action" value="Profile">
+                    <input type="hidden" name="id_friend" value="@Model.profile.userId">
+                    <button type="submit" class="btn btn-success w-50">Adauga ca prieten</button>
+                </form>
+            }
+        </div>
+
+        <div class="col-md-8" style="border: 1px solid black; border-radius: 10px;">
+            <h2>Postări</h2>
+            @if (Model.posts.Count == 0)
+            {
+                <label> Nu a fost facută nici o postare.</label>
+            }
+            else
+            {
+                foreach (var post in Model.posts)
+                {
+                    <div class="card">
+                        <div class="card-body">
+                            @if (Model.isTheUser)
+                            {
+                                <form action="" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id_post" value="@post.id">
+                                    <input type="hidden" name="id_user" value="@Model.profile.userId">
+                                    <button type="submit" class="btn btn-danger btn-square float-right">X</button><br><br>
+                                </form>
+                            }
+                            <div class="container" style="margin-left: -2%">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        @if (post.profile.profileImage == null)
+                                        {
+                                            string path = "/images/" + (@post.profile.sex == 0 ? "F" : "M") + ".jpg";
+                                            <div class="rounded-circle" style="width: 50px; height: 50px; overflow: hidden;">
+                                                <img src="@path" alt="Imagine profil" class="img-fluid">
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            string path = "/images/" + post.profile.profileImage.category + Convert.ToString(post.profile.profileImage.id) + post.profile.profileImage.extension;
+                                            <div class="rounded-circle" style="width: 50px; height: 50px; overflow: hidden;">
+                                                <img src="@path" alt="Imagine profil" class="img-fluid">
+                                            </div>
+                                        }
+                                    </div>
+                                    <div class="col-md-6">
+                                        @{
+                                            string fullName = post.profile.surrname + " " + post.profile.name;
+                                        }
+                                        <h5 class="card-title">@fullName</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-time-container mt-3">
+                                <p class="text-muted">Timp Postare: @post.createdTime</p>
+                            </div>
+                            @if (post.status == true)
+                            {
+
+                                <p class="card-text">Status postare: Public</p>
+                            }
+                            else
+                            {
+                                <p class="card-text text-danger">Status postare: Privat</p>
+                            }
+                            <div class="post-text-container mt-3">
+                                <p class="card-text">@post.postText</p>
+                            </div>
+                            @if (post.image != null)
+                            {
+                                string path = "/images/" + post.image.category + Convert.ToString(post.image.id) + post.image.extension;
+                                <div class="img-thumbnail" style="max-width: 100%; height: auto;">
+                                    <img src="@path" alt="Imagine post" class="img-fluid">
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <br>
+
+                    <br>
+                }
+            }
+        </div>
+    </div>
+</div>

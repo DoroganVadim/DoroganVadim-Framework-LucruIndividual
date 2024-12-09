@@ -1,0 +1,99 @@
+﻿@model LucruIndividual.Models.Home.HomePageModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">Fă o postare!</h5>
+                    <form asp-action="CreatePost" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <textarea class="form-control" asp-for="@Model.post.postText" rows="5" placeholder="Introdu textul postării..."></textarea>
+                            <span asp-validation-for="@Model.post.postText" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="imagine" class="form-label">Selectează o imagine:</label>
+                            <input id="imagine" name="image" type="file" accept="image/*" onchange="loadFile(event)" class="form-control">
+                            <span asp-validation-for="@Model.post.image" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <img id="imagePreview" style="width: 100%; height: auto; object-fit: cover; display: none;" />
+                        </div>
+                        <div class="form-check">
+                            <input asp-for="@Model.post.status" type="checkbox" class="form-check-input" id="public">
+                            <label class="form-check-label" for="public">Publica</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-3">Postează</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+<h1>Postări ale altor utilizatori</h1>
+@{
+    int i = 0;
+}
+@foreach (var post in Model.otherPosts)
+{
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-1">
+                    @if (post.profile.profileImage == null)
+                    {
+                        string path = "/images/" + (@post.profile.sex == 0 ? "F" : "M") + ".jpg";
+                        <div class="rounded-circle" style="width: 50px; height: 50px; overflow: hidden;">
+                            <img src="@path" alt="Imagine profil" class="img-fluid">
+                        </div>
+                    }
+                    else
+                    {
+                        string path = "/images/" + post.profile.profileImage.category + Convert.ToString(post.profile.profileImage.id) + post.profile.profileImage.extension;
+                        <div class="rounded-circle" style="width: 50px; height: 50px; overflow: hidden;">
+                            <img src="@path" alt="Imagine profil" class="img-fluid">
+                        </div>
+                    }
+                </div>
+                <div class="col-md-7">
+                    @{
+                        string fullName = post.profile.surrname + " " + post.profile.name;
+                    }
+                    <h5 class="card-title">
+                        <a asp-action="Profile" asp-controller="Home" asp-route-id="@post.profile.userId">@fullName</a>
+                    </h5>
+                    <div class="post-time-container mt-3">
+                        <p class="text-muted">Timp Postare: @post.createdTime</p>
+                    </div>
+                </div>
+            </div>
+            <div class="post-text-container mt-3">
+                <p class="card-text">@post.postText</p>
+            </div>
+            @if (post.image != null)
+            {
+                string path = "/images/" + post.image.category + Convert.ToString(post.image.id) + post.image.extension;
+                <div class="img-thumbnail" style="max-width: 100%; height: auto;">
+                    <img src="@path" alt="Imagine post" class="img-fluid">
+                </div>
+            }
+        </div>
+    </div>
+}
+<script>
+    function loadFile(event) {
+        var output = document.getElementById('imagePreview');
+        output.style.display = 'block';
+        output.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>

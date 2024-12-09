@@ -1,0 +1,37 @@
+﻿@model LucruIndividual.Models.DbEntities.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5 w-50">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="text-center mb-4">Bun Venit!</h1>
+                    <h4>Autentificare:</h4>
+                    <form asp-for="Login" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="mb-3">
+                            <label class="form-label">Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" asp-for="@Model.email" autocomplete="off" placeholder="Email">
+                            <span asp-validation-for="@Model.email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Parola <span class="text-danger">*</span></label>
+                            <input type="password" asp-for="@Model.password" class="form-control" placeholder="Parola" />
+                            <span asp-validation-for="@Model.password" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <a asp-action="Register" class="btn btn-link">Inregistrare</a>
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" class="btn btn-primary w-100" value="Autentificate">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

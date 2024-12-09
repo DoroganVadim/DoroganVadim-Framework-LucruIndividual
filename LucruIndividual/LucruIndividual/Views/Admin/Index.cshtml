@@ -1,0 +1,72 @@
+﻿@model LucruIndividual.Models.Admin.AdminPanelModel
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Nume</th>
+                <th>Prenume</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.profiles != null && Model.profiles.Any())
+            {
+                foreach (var profile in Model.profiles)
+                {
+                    var status = profile.user.status ? "Activ" : "Inactiv";
+                    var statusClass = profile.user.status ? "text-success" : "text-danger";
+                    <form method="post" asp-action="ChangeStatus">
+                        <input type="hidden" name="id" value="@profile.userId" />
+                        <input type="hidden" name="page" value="@Model.pageNumber" />
+                    <tr>
+                        <td>@profile.userId</td>
+                        <td>@profile.user.email</td>
+                        <td>
+                            <button type="submit" class="btn @statusClass">@status</button>
+                        </td>
+                        <td>@profile.surrname</td>
+                        <td>@profile.name</td>
+                    </tr>
+                    </form>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center">Nu sunt utilizatori înregistrați</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(Model.pageNumber <= 1 ? "disabled" : "")">
+                <a class="page-link" asp-route-page="@(Model.pageNumber - 1)" asp-route-pageSize="@Model.pageSize" aria-label="Anterior">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+
+            @for (var i = 1; i <= Model.totalPages; i++)
+            {
+                <li class="page-item @(i == Model.pageNumber ? "active" : "")">
+                    <a class="page-link" asp-route-page="@i" asp-route-pageSize="@Model.pageSize">@i</a>
+                </li>
+            }
+
+            <li class="page-item @(Model.pageNumber >= Model.totalPages ? "disabled" : "")">
+                <a class="page-link" asp-route-page="@(Model.pageNumber + 1)" asp-route-pageSize="@Model.pageSize" aria-label="Următor">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

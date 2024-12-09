@@ -1,0 +1,70 @@
+﻿@model LucruIndividual.Models.Account.RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container mt-5 w-100">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="content">
+                            <form asp-action="Index" method="post">
+                                @Html.AntiForgeryToken()
+                                <button class="btn btn-primary float-end mt-3">Înapoi</button>
+                            </form>
+                        </div>
+                        <form asp-for="Register" method="post">
+                            @Html.AntiForgeryToken()
+                            <h4>Înregistrare</h4>
+                            <div class="mb-3">
+                                <label class="form-label">Nume de familie<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" asp-for="@Model.surrname" autocomplete="off" placeholder="Nume">
+                                <span asp-validation-for="@Model.surrname" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Prenume<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" asp-for="@Model.name" autocomplete="off" placeholder="Prenume">
+                                <span asp-validation-for="@Model.name" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Data Nasterii<span class="text-danger">*</span></label>
+                                <input type="date" class="form-control" asp-for="@Model.birthDay" autocomplete="off" placeholder="Data Nasterii">
+                                <span asp-validation-for="@Model.birthDay" class="text-danger"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Sexul:</label><br>
+                                <input type="radio" asp-for="@Model.sex" value="M" /> Masculin<br>
+                                <input type="radio" asp-for="@Model.sex" value="F" /> Feminin<br>
+                                <span asp-validation-for="@Model.sex" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" asp-for="@Model.email" autocomplete="off" placeholder="Email">
+                                <span asp-validation-for="@Model.email" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Parola <span class="text-danger">*</span></label>
+                                <input type="password" asp-for="@Model.password" class="form-control" placeholder="Parola" />
+                                <span asp-validation-for="@Model.password" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label>Confirma Parola:</label>
+                                <input type="password" asp-for="@Model.confirmPassword" class="form-control" placeholder="Confirma Parola" />
+                                <span asp-validation-for="@Model.confirmPassword" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <input type="submit" class="btn btn-primary w-100" value="Înregistreaza-te">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

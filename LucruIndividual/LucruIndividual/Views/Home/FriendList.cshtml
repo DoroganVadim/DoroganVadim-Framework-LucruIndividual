@@ -1,0 +1,69 @@
+﻿@model LucruIndividual.Models.Home.FriendsInformationModel
+@{
+    ViewData["Title"] = "Friend List";
+}
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Lista de prietenie:</h2>
+                @if (Model.profiles.Count == 0)
+                {
+                    <label> Nu aveti prieteni.</label>
+                }
+                else
+                {
+                    foreach (var profile in Model.profiles)
+                    {
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="container" style="margin-left: -2%">
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            @if (profile.profileImage == null)
+                                            {
+                                                string path = "/images/" + (profile.sex == 0 ? "F" : "M") + ".jpg";
+                                                <div class='rounded-circle' style='overflow: visible; width: 50px; height: 50px;'>
+                                                    <img src="@path" alt="Imagine profil" class='img-thumbnail'>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                string path = "/images/" + profile.profileImage.category + Convert.ToString(profile.profileImage.id) + profile.profileImage.extension;
+                                                <div class='rounded-circle' style='overflow: visible; width: 50px; height: 50px;'>
+                                                    <img src="@path" alt="Imagine profil" class='img-thumbnail' style='overflow: visible; width: 50px; height: 50px;'>
+                                                </div>
+                                            }
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            @{
+                                                string fullName = profile.surrname + " " + profile.name;
+                                            }
+                                            <h5 class="card-title">
+                                                <a asp-action="Profile" asp-controller="Home" asp-route-id="@profile.userId">@fullName</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                @if (Model.isUser)
+                                {
+                                    <form action="DeleteFriend" method="post">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="action" value="FriendList">
+                                        <input type="hidden" name="id_friend" value="@profile.userId">
+                                        <button type="submit" class="btn btn-danger btn-square">Șterge Prieten</button><br><br>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                        <br>
+
+                        <br>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</body>
