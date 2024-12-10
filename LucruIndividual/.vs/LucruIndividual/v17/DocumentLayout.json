@@ -3,31 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FrameworkLucruIndividual/True/SqlTable/dbo.users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|c:\\users\\user\\desktop\\an3sem1\\frameworkuri\\lucruindividual\\lucruindividual\\lucruindividual\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|solutionrelative:lucruindividual\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|c:\\users\\user\\desktop\\an3sem1\\frameworkuri\\lucruindividual\\lucruindividual\\lucruindividual\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|solutionrelative:lucruindividual\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|c:\\users\\user\\desktop\\an3sem1\\frameworkuri\\lucruindividual\\lucruindividual\\lucruindividual\\views\\home\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|solutionrelative:lucruindividual\\views\\home\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|c:\\users\\user\\desktop\\an3sem1\\frameworkuri\\lucruindividual\\lucruindividual\\lucruindividual\\views\\account\\banned.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|solutionrelative:lucruindividual\\views\\account\\banned.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|c:\\users\\user\\desktop\\an3sem1\\frameworkuri\\lucruindividual\\lucruindividual\\lucruindividual\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|solutionrelative:lucruindividual\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|c:\\users\\user\\desktop\\an3sem1\\frameworkuri\\lucruindividual\\lucruindividual\\lucruindividual\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|solutionrelative:lucruindividual\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|c:\\users\\user\\desktop\\an3sem1\\frameworkuri\\lucruindividual\\lucruindividual\\lucruindividual\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|solutionrelative:lucruindividual\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|c:\\users\\user\\desktop\\an3sem1\\frameworkuri\\lucruindividual\\lucruindividual\\lucruindividual\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F73AEEFF-105D-4845-856E-41B98F4EA7DF}|LucruIndividual\\LucruIndividual.csproj|solutionrelative:lucruindividual\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FrameworkLucruIndividual/True/SqlTable/dbo.friendRelations.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,94 +21,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dbo.users [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FrameworkLucruIndividual/True/SqlTable/dbo.users.sql",
-              "ToolTip": "dbo.users [Data]",
+              "DocumentIndex": 2,
+              "Title": "dbo.friendRelations [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FrameworkLucruIndividual/True/SqlTable/dbo.friendRelations.sql",
+              "ToolTip": "dbo.friendRelations [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-12-08T16:33:46.604Z",
+              "WhenOpened": "2024-12-10T11:52:56.06Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Banned.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Views\\Account\\Banned.cshtml",
-              "RelativeDocumentMoniker": "LucruIndividual\\Views\\Account\\Banned.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Views\\Account\\Banned.cshtml",
-              "RelativeToolTip": "LucruIndividual\\Views\\Account\\Banned.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T16:32:15.582Z",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LucruIndividual\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LucruIndividual\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAewIsAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T11:48:43.599Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "LucruIndividual\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "LucruIndividual\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAnwE8AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T16:30:36.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "LucruIndividual\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "LucruIndividual\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Views\\Home\\Profile.cshtml",
+              "RelativeDocumentMoniker": "LucruIndividual\\Views\\Home\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Views\\Home\\Profile.cshtml",
+              "RelativeToolTip": "LucruIndividual\\Views\\Home\\Profile.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAE8AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T16:30:32.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "LucruIndividual\\Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "LucruIndividual\\Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T16:30:30.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Views\\Admin\\Index.cshtml",
-              "RelativeDocumentMoniker": "LucruIndividual\\Views\\Admin\\Index.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Views\\Admin\\Index.cshtml",
-              "RelativeToolTip": "LucruIndividual\\Views\\Admin\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-08T16:17:26.39Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "LucruIndividual\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\an3sem1\\Frameworkuri\\LucruIndividual\\LucruIndividual\\LucruIndividual\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "LucruIndividual\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAwC8AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T15:38:00.633Z",
+              "WhenOpened": "2024-12-10T11:48:02.451Z",
               "EditorCaption": ""
             }
           ]

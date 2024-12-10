@@ -166,3 +166,4 @@ C:\Users\User\Desktop\an3sem1\Frameworkuri\LucruIndividual\LucruIndividual\Lucru
 C:\Users\User\Desktop\an3sem1\Frameworkuri\LucruIndividual\LucruIndividual\LucruIndividual\obj\Debug\net8.0\LucruIndividual.pdb
 C:\Users\User\Desktop\an3sem1\Frameworkuri\LucruIndividual\LucruIndividual\LucruIndividual\obj\Debug\net8.0\LucruIndividual.genruntimeconfig.cache
 C:\Users\User\Desktop\an3sem1\Frameworkuri\LucruIndividual\LucruIndividual\LucruIndividual\obj\Debug\net8.0\ref\LucruIndividual.dll
+C:\Users\User\Desktop\an3sem1\Frameworkuri\LucruIndividual\LucruIndividual\LucruIndividual\obj\Debug\net8.0\LucruIndividual.sourcelink.json

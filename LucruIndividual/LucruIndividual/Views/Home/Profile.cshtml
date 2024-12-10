@@ -75,10 +75,9 @@
                         <div class="card-body">
                             @if (Model.isTheUser)
                             {
-                                <form action="" method="post">
+                                <form action="DeletePost" method="post">
                                     @Html.AntiForgeryToken()
-                                    <input type="hidden" name="id_post" value="@post.id">
-                                    <input type="hidden" name="id_user" value="@Model.profile.userId">
+                                    <input type="hidden" name="postId" value="@post.id">
                                     <button type="submit" class="btn btn-danger btn-square float-right">X</button><br><br>
                                 </form>
                             }

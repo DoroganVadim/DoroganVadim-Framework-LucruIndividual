@@ -137,6 +137,14 @@ namespace LucruIndividual.Controllers
             return View(editProfile);
         }
 
+        public IActionResult DeletePost(int? postId = null)
+        {
+            var post = context.posts.First(fr => fr.id == postId);
+            context.posts.Remove(post);
+            context.SaveChanges();
+            return RedirectToAction("Profile");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult UpdateProfile(EditProfileModel model, IFormFile? image)
@@ -221,7 +229,6 @@ namespace LucruIndividual.Controllers
             return RedirectToAction(action,new { id = id_friend });
         }
 
-        [ValidateAntiForgeryToken]
         public IActionResult FriendRequests(int? id = null)
         {
             var email = User.FindFirst(ClaimTypes.Name)?.Value;
@@ -231,7 +238,15 @@ namespace LucruIndividual.Controllers
             return View(model);
         }
 
-        [ValidateAntiForgeryToken]
+        public IActionResult DeleteFriendRequest(int? userId = null)
+        {
+            var friendRequest = context.friendRelations.First(fr=>fr.user1Id == userId && fr.status == false);
+            context.friendRelations.Remove(friendRequest);
+            context.SaveChanges();
+            changeFriendRequestNumber();
+            return RedirectToAction("FriendRequests");
+        }
+
         public IActionResult FriendList(int? id = null)
         {
             var email = User.FindFirst(ClaimTypes.Name)?.Value;
@@ -241,7 +256,6 @@ namespace LucruIndividual.Controllers
             return View(model);
         }
 
-        [ValidateAntiForgeryToken]
         public IActionResult DeleteFriend(int id_friend, string action)
         {
             var email = User.FindFirst(ClaimTypes.Name)?.Value;
@@ -253,7 +267,6 @@ namespace LucruIndividual.Controllers
             return RedirectToAction(action, new { id = id_friend });
         }
 
-        [ValidateAntiForgeryToken]
         public IActionResult SearchUser(string searchName)
         {
             var email = User.FindFirst(ClaimTypes.Name)?.Value;

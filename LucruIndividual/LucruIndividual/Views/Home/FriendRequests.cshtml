@@ -32,18 +32,25 @@
                                                     <img src="@path" alt="Imagine profil" class='img-thumbnail' style='overflow: visible; width: 50px; height: 50px;'>
                                                 </div>
                                             }
-                                </div>
+                                        </div>
 
-                                <div class="col-md-6">
+                                        <div class="col-md-6">
                                             @{
                                                 string fullName = profile.surrname + " " + profile.name;
                                             }
                                             <h5 class="card-title">
                                                 <a asp-action="Profile" asp-controller="Home" asp-route-id="@profile.userId">@fullName</a>
                                             </h5>
+                                        </div>
+
+                                        <div class="col-md-1 offset-md-4 text-right">
+                                            <form asp-action="DeleteFriendRequest" asp-controller="Home" method="post">
+                                                <input type="hidden" name="userId" value="@profile.userId" />
+                                                <button type="submit" class="btn btn-danger btn-sm">X</button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
                         <br>
                         @if(Model.isUser){
                         <form asp-action="SendFriendRequest" method="post">
